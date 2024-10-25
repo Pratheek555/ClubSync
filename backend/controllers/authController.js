@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 exports.registerUser = async (req, res) => {
-    const { username, email, password, name, phoneNumber, interests } = req.body;
+    const { username, email, password, name, interests } = req.body;
     try {
         let user = await User.findOne({ email });
         if (user) {
@@ -15,7 +15,6 @@ exports.registerUser = async (req, res) => {
             email,
             password,
             name,
-            phoneNumber,
             interests,
         });
 

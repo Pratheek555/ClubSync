@@ -32,7 +32,7 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((err) => console.error('MongoDB connection error:', err));
 
 app.use('/api/auth', authRoutes);
-//app.use('/api/clubs', clubRoutes);
+app.use('/api/clubs', clubRoutes);
 //app.use('/api/events', eventRoutes);
 
 app.listen(PORT, () => {
