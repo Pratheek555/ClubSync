@@ -7,7 +7,7 @@ import {
     IconBrandGoogle,
 } from "@tabler/icons-react";
 
-export default functiopn SigninFormDemo() {
+export default function SigninFormDemo() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form submitted");
