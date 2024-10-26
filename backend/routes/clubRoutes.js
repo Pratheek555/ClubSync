@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/create', authMiddleware, createClub);
 
-//router.post('/invite', authMiddleware, inviteMember);
+// router.post('/invite', authMiddleware, inviteMember);
 // router.post('/join/:clubId', authMiddleware, joinClub);
 
 router.get('/', authMiddleware, getAllClubs);
