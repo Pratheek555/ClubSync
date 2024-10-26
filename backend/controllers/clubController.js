@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
 const Club = require('../models/Club');
-const User = require('../models/User');
 
 exports.createClub = async (req, res) => {
     const { name, description, category, tags, faculty_advisor } = req.body;
@@ -28,7 +26,7 @@ exports.createClub = async (req, res) => {
 
 exports.getAllClubs = async (req, res) => {
     try {
-        const clubs = await Club.find().select('name description tags faculty_advisor');
+        const clubs = await Club.find().select('name description category tags faculty_advisor');
         res.status(200).json(clubs);
     } catch (err) {
         console.error(err.message);
