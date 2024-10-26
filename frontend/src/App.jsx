@@ -10,6 +10,9 @@ import {
 } from "react-router-dom"
 import Signup from './pages/Signup'
 import ClubCreation from "./components/ui/ClubCreation"
+import Interests from './components/ui/Interests'
+import Clubs from './pages/Clubs'
+import Home from './pages/Home'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +24,9 @@ function App() {
         {/* <Route path='/signin' element={<Signin />}></Route> */}
         {/* <Route path='/Clubs&Chapters'></Route> */}
         <Route path="/Club-Creation" element={<ClubCreation />}></Route>
+        <Route path="/Interests" element={<Interests />}></Route>
+        <Route path='/Clubs-Chapters' element={<Clubs />}> </Route>
+        <Route path='/home' element={<Home />}></Route>
       </Routes>
     </BrowserRouter>
 

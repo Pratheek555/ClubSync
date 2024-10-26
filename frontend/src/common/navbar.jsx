@@ -38,19 +38,26 @@ export default function Navibar() {
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 <NavbarItem>
                     <Link color="primary" href="#" className="text-white hover:text-gray-400">
-                        Clubs/Chapters
+                        Home {/* <Posts> removed or ensure it's imported */}
+                    </Link>
+                </NavbarItem>
+
+                <NavbarItem>
+                    <Link color="primary" href="#" className="text-white hover:text-gray-400">
+                        Clubs
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
                     <Link href="#" aria-current="page" className="text-white font-semibold hover:text-blue-400">
-                        Events {/* Set active text to blue */}
+                        Chapters {/* Set active text to blue */}
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
                     <Link color="primary" href="#" className="text-white hover:text-gray-400">
-                        Club {/* <Posts> removed or ensure it's imported */}
+                        Events {/* <Posts> removed or ensure it's imported */}
                     </Link>
                 </NavbarItem>
+
             </NavbarContent>
 
             {/* Profile Dropdown */}

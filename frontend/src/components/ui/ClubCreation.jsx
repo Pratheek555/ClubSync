@@ -1,12 +1,8 @@
 import React from "react";
 import { Label } from "../ui/label";
-import { Input } from "../ui/input";
+import { Input } from "../ui/Input";
 import { cn } from "../../utils/cn"; // Updated the path for utils function
-import {
-    IconBrandGithub,
-    IconBrandGoogle,
-    IconBrandOnlyfans,
-} from "@tabler/icons-react";
+
 import { Autocomplete, AutocompleteSection, AutocompleteItem } from "@nextui-org/autocomplete";
 import { WavyBackground } from "../ui/wavy-background";
 
