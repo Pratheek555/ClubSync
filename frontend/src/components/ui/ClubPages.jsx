@@ -1,10 +1,12 @@
-// Animated toolkit
-// Benta grid
-// Tracing beams
-
+import React from "react";
+import { useLocation } from "react-router-dom";
 import { AnimatedTooltip } from "../ui/animated-tooltip";
+import { twMerge } from "tailwind-merge";
+import { TracingBeam } from "../ui/tracing-beam";
+import Navibar from "../../common/navbar";
 
 export default function ClubPages() {
+    const location = useLocation();
     const people = [
         {
             id: 1,
@@ -49,11 +51,70 @@ export default function ClubPages() {
                 "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
         },
     ];
+    const { club } = location.state || {};
+
+    const dummyContent = [
+        {
+            title: club.title,
+            description: (
+                <>
+                    <p>{club.description}</p>
+                    <p>
+                        Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad
+                        veniam in commodo id reprehenderit adipisicing. Proident duis
+                        exercitation ad quis ex cupidatat cupidatat occaecat adipisicing.
+                    </p>
+                    <p>
+                        Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod
+                        reprehenderit deserunt amet laborum consequat adipisicing officia qui
+                        irure id sint adipisicing. Adipisicing fugiat aliqua nulla nostrud.
+                        Amet culpa officia aliquip deserunt veniam deserunt officia
+                        adipisicing aliquip proident officia sunt.
+                    </p>
+                </>
+            ),
+            image:
+                "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
+    ];
+
+    if (!club) {
+        return <div>No club data available.</div>;
+    }
 
     return (
-        <div className="flex flex-row items-center justify-center mb-10 w-full">
-            <AnimatedTooltip items={people} />
-        </div>
-    )
+        <div className="flex flex-col bg-black min-h-screen text-white">
+            <Navibar />
+            <div className="flex flex-col lg:flex-row lg:justify-between items-center px-6 py-10">
+                <div className="lg:w-3/4 max-w-5xl">
+                    <TracingBeam className="relative">
+                        {dummyContent.map((item, index) => (
+                            <div key={`content-${index}`} className="mb-12">
+                                <h2 className="text-white bg-black rounded-full text-sm w-fit px-4 py-1 mb-4">
+                                    {item.badge}
+                                </h2>
 
+                                <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
+
+                                <div className="text-sm prose prose-sm dark:prose-invert">
+                                    {item.image && (
+                                        <img
+                                            src={item.image}
+                                            alt="blog thumbnail"
+                                            className="rounded-lg mb-6 object-cover w-full h-auto"
+                                        />
+                                    )}
+                                    {item.description}
+                                </div>
+                            </div>
+                        ))}
+                    </TracingBeam>
+                </div>
+
+                <div className="lg:w-20 mt-10 lg:mt-0 flex sm:flex-row lg:flex-col">
+                    <AnimatedTooltip items={people} />
+                </div>
+            </div>
+        </div>
+    );
 }

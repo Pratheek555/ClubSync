@@ -3,14 +3,15 @@ import { Label } from "../ui/label";
 import { Input } from "./Textbox";
 import { cn } from "../../utils/cn"; // Updated the path for utils function
 
-import { Autocomplete, AutocompleteSection, AutocompleteItem } from "@nextui-org/autocomplete";
+import { Autocomplete, AutocompleteItem } from "@nextui-org/autocomplete";
 import { WavyBackground } from "../ui/wavy-background";
+import Navibar from "../../common/navbar"; // Assuming Navibar is the navbar component
 
 const animals = [
     { label: "Photography", value: "Photography", description: "People Interested in photography" },
     { label: "Web development", value: "Web development", description: "People interested in learning web development" },
     { label: "Game Development", value: "Game development", description: "People Interested in Game Development" },
-    { label: "Cloud and DevOps", value: "Cloud and Devops", description: "People Interested in photography" },
+    { label: "Cloud and DevOps", value: "Cloud and Devops", description: "People Interested in Cloud and DevOps" },
     { label: "BlockChain", value: "BlockChain", description: "People Interested in blockchain" },
     { label: "Dance", value: "Dance", description: "People Interested in Dance" },
 ];
@@ -22,9 +23,11 @@ export default function ClubCreation() {
     };
 
     return (
-        <WavyBackground className="max-w-4xl mx-auto pb-40">
-            <div className="h-screen flex items-center justify-center">
-                <div className="max-w-md w-full mx-auto p-4 md:p-8 shadow-input bg-white dark:bg-black rounded-none md:rounded-2xl">
+        <div className="bg-black min-h-screen flex flex-col items-center text-white">
+            {/* Navbar placed outside the main form container */}
+
+            <WavyBackground className="flex-grow flex items-center justify-center w-full">
+                <div className="max-w-md w-full p-4 md:p-8 shadow-input bg-white dark:bg-black rounded-none md:rounded-2xl">
                     <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200 text-center">
                         Amen to the New Journey!
                     </h2>
@@ -35,56 +38,34 @@ export default function ClubCreation() {
                     <form className="my-8" onSubmit={handleSubmit}>
                         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
                             <LabelInputContainer>
-                                <Label htmlFor="firstname">Club Name</Label>
-                                <Input id="firstname" placeholder="Open Source Community" type="text" />
+                                <Label htmlFor="firstname">Email Address</Label>
+                                <Input id="firstname" placeholder="Tyler" type="text" />
                             </LabelInputContainer>
-
                         </div>
 
                         <LabelInputContainer className="mb-4">
-                            <Label htmlFor="email">Description</Label>
-                            <Input id="email" placeholder="Write More about the Club" type="email" />
+                            <Label htmlFor="lastname">Password</Label>
+                            <Input id="lastname" placeholder="Durden" type="text" />
                         </LabelInputContainer>
 
-                        <LabelInputContainer className="mb-4">
-                            <Label htmlFor="password">Label</Label>
-                            <Autocomplete
-                                label="Select a Category"
-                                className="max-w-xs"
-                            >
-                                {animals.map((animal) => (
-                                    <AutocompleteItem key={animal.value} value={animal.value}>
-                                        {animal.label}
-                                    </AutocompleteItem>
-                                ))}
-                            </Autocomplete>
 
 
-                        </LabelInputContainer>
-                        <LabelInputContainer className="mb-4">
-                            <Label htmlFor="email">Club Coordinator</Label>
-                            <Input id="email" placeholder="Write More about the Club" type="email" />
-                        </LabelInputContainer>
 
                         <button
                             className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                             type="submit"
                         >
-                            Let's Start &rarr;
+                            Login &rarr;
                             <BottomGradient />
                         </button>
 
                         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-
-
                     </form>
                 </div>
-            </div>
-        </WavyBackground>
-
+            </WavyBackground>
+        </div>
     );
 }
-
 
 const BottomGradient = () => {
     return (
@@ -102,4 +83,3 @@ const LabelInputContainer = ({ children, className }) => {
         </div>
     );
 };
-

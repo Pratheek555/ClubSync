@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Label } from "../ui/label";
-import { Input } from "../ui/Input";
+import { Input } from "./Textbox";
 import { cn } from "../../utils/cn";
 import { Autocomplete, AutocompleteItem } from "@nextui-org/autocomplete";
 import { BackgroundLines } from "./BackgroundLines";

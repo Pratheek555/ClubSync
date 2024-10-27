@@ -37,18 +37,18 @@ export default function Navibar() {
             {/* Desktop Menu */}
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 <NavbarItem>
-                    <Link color="primary" href="#" className="text-white hover:text-gray-400">
+                    <Link color="primary" href="/home" className="text-white hover:text-gray-400">
                         Home {/* <Posts> removed or ensure it's imported */}
                     </Link>
                 </NavbarItem>
 
                 <NavbarItem>
-                    <Link color="primary" href="#" className="text-white hover:text-gray-400">
+                    <Link color="primary" href="Clubs-Chapters" className="text-white hover:text-gray-400">
                         Clubs
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link href="#" aria-current="page" className="text-white font-semibold hover:text-blue-400">
+                    <Link href="Clubs-Chapters" aria-current="page" className="text-white font-semibold hover:text-blue-400">
                         Chapters {/* Set active text to blue */}
                     </Link>
                 </NavbarItem>

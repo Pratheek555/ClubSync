@@ -4,6 +4,8 @@ import Navibar from "../common/navbar";
 import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 import { cn } from "../utils/cn"
 import { Spotlight } from "../components/ui/Spotlight";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Home() {
     const words = [
@@ -15,7 +17,11 @@ export default function Home() {
         { text: "Clubs_" },
         { text: "Sync!" },
     ];
+    const navigate = useNavigate();
 
+
+    const handleJoinNowClick = () => navigate("/signup");
+    const handleSignupClick = () => navigate("/signin");
     return (
         <div className="bg-black min-h-screen text-white">
             <Navibar />
@@ -38,11 +44,11 @@ export default function Home() {
 
                     <TypewriterEffectSmooth words={words} />
                     <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-0 md:space-x-2 mt-4">
-                        <button className="w-40 h-10 rounded-xl bg-white text-black text-sm">
+                        <button className="w-40 h-10 rounded-xl bg-white text-black text-sm" onClick={handleJoinNowClick}>
                             Join now
                         </button>
-                        <button className="w-40 h-10 rounded-xl bg-black border border-white text-white text-sm">
-                            Signup
+                        <button className="w-40 h-10 rounded-xl bg-black border border-white text-white text-sm" onClick={handleSignupClick}>
+                            Signin
                         </button>
                     </div>
                 </div>
