@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Robotics Club",
+      "description": "A club dedicated to building and programming robots.",
+      "category": "robotics",
+      "tags": ["Technology", "Engineering"],
+      "faculty_advisor": "Prof. John Doe"
+    },
+    {
+      "name": "Drama Club",
+      "description": "A club for students interested in theater and acting.",
+      "category": "drama",
+      "tags": ["Cultural", "Performance"],
+      "faculty_advisor": "Dr. Sarah Johnson"
+    },
+    {
+      "name": "Coding Club",
+      "description": "A club where students can learn and practice coding skills.",
+      "category": "technology",
+      "tags": ["Programming", "Tech"],
+      "faculty_advisor": "Mr. David Lee"
+    },
+    {
+      "name": "Music Club",
+      "description": "A club for music lovers to practice and perform.",
+      "category": "music",
+      "tags": ["Cultural", "Art"],
+      "faculty_advisor": "Ms. Emily Brown"
+    },
+    {
+      "name": "Environmental Club",
+      "description": "A club aimed at raising awareness about environmental issues.",
+      "category": "environment",
+      "tags": ["Social", "Awareness"],
+      "faculty_advisor": "Dr. Rebecca Green"
+    },
+    {
+      "name": "Chess Club",
+      "description": "A club for chess enthusiasts to play and learn strategies.",
+      "category": "chess",
+      "tags": ["Mind Sports", "Strategy"],
+      "faculty_advisor": "Prof. Michael Clarke"
+    },
+    {
+      "name": "Debate Club",
+      "description": "A club for students to improve their debating and public speaking skills.",
+      "category": "debate",
+      "tags": ["Communication", "Leadership"],
+      "faculty_advisor": "Mr. Alex Turner"
+    },
+    {
+      "name": "Literature Club",
+      "description": "A club for students interested in reading and discussing literature.",
+      "category": "literature",
+      "tags": ["Cultural", "Art"],
+      "faculty_advisor": "Dr. Susan Hill"
+    },
+    {
+      "name": "Astronomy Club",
+      "description": "A club for students fascinated by space and astronomy.",
+      "category": "astronomy",
+      "tags": ["Science", "Exploration"],
+      "faculty_advisor": "Prof. William Richards"
+    }
+  ]
+  
